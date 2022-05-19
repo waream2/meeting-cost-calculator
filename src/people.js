@@ -14,4 +14,19 @@ export const PEOPLE =  [
     position: "Facilitator",
     salary: "75000"
   },
+  {
+    name: "Ace Callwooda",
+    position: "Facilitator",
+    salary: "75000"
+  },
+  {
+    name: "Ace Callwoods",
+    position: "Facilitator",
+    salary: "75000"
+  },
+  {
+    name: "Ace Callwoodd",
+    position: "Facilitator",
+    salary: "75000"
+  },
 ]

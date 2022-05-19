@@ -1,24 +1,24 @@
 import React, { useState } from 'react'
 import { Link } from '@reach/router';
 
-const MeasureMenu = ({showingState, handleShow}) => (
+const MeasureMenu = ({ showingState, handleShow }) => (
   <div className="mx-auto flex flex-col">
-     <button className="mr-5" onClick={() => handleShow(false)}>
-          <Link to="/measure-seconds" >
-            Measure Seconds
-          </Link>
-        </button>
-        <button className="mr-5" onClick={() => handleShow(false)} >
-          <Link to="/measure-regular">
-            Measure
-          </Link>
-        </button>
+    <button className="mr-5" onClick={() => handleShow(false)}>
+      <Link to="/measure-seconds" >
+        Measure Seconds
+      </Link>
+    </button>
+    <button className="mr-5" onClick={() => handleShow(false)} >
+      <Link to="/measure-regular">
+        Measure
+      </Link>
+    </button>
   </div>
 );
 
 const Header = () => {
 
-  const [ showMeetingMenu, setShowMeetingMenu ] = useState(false)
+  const [showMeetingMenu, setShowMeetingMenu] = useState(false)
 
   const handleMeetingHover = () => {
     setShowMeetingMenu(true)
@@ -29,7 +29,7 @@ const Header = () => {
   }
 
   return (
-    <div className="flex my-5 w-full  justify-between">
+    <div className="flex mt-5 mb-10 w-full  justify-between">
       <div>
         <button>
           <Link to="/">
@@ -38,7 +38,7 @@ const Header = () => {
         </button>
       </div>
       <div className='flex'>
-      <button className="mr-5">
+        <button className="mr-5">
           <Link to="/add-coworker">
             Add Coworker
           </Link>
@@ -47,7 +47,7 @@ const Header = () => {
           <button className="mr-5" >
             Add Meeting
           </button>
-          {showMeetingMenu && <MeasureMenu showingState={showMeetingMenu} handleShow={setShowMeetingMenu} /> }
+          {showMeetingMenu && <MeasureMenu showingState={showMeetingMenu} handleShow={setShowMeetingMenu} />}
         </div>
 
       </div>
