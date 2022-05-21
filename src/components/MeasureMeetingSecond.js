@@ -3,6 +3,8 @@ import { PEOPLE } from '../people';
 import moment from 'moment';
 import { meetings } from '../meetings';
 import { Link } from '@reach/router';
+import SectionHeader from './SectionHeader.js'
+import Select from './Select'
 
 
 const AttendeePill = ({ name, removeFunction }) => {
@@ -69,7 +71,6 @@ const MeasureMeetingSecond = ({ addMeeting, meetings, coworkers }) => {
       // const newArray = [...meetings, ...JSON.parse(localStorage.getItem("meetings"))]
       const newArray = JSON.parse(localStorage.getItem("meetings"))
       meetings.push(...newArray)
-      console.log(meetings)
     }
     // console.log(meetings)
   }, [])
@@ -113,6 +114,7 @@ const MeasureMeetingSecond = ({ addMeeting, meetings, coworkers }) => {
   }
 
   const addCoworkerToMeeting = () => {
+    console.log(coworkers)
     coworkers.map((coworker) => {
       if (person === coworker.name) {
         if (people.filter((check) => check.name === coworker.name).length === 0) {
@@ -142,10 +144,17 @@ const MeasureMeetingSecond = ({ addMeeting, meetings, coworkers }) => {
 
   return (
     <>
-      {/* <div className="w-full"> */}
-      <div className="flex flex-col items-center justify-center mb-10  text-center ">
-        <h1 className="text-2xl mb-4">Measure In Minutes</h1>
-        {coworkers.length !== 0 ? <><p className="mb-5"> Use this calculator to measure exactly how much the meeting is going to cost, down to the second, based on who's in the meeting.</p>  </> : <> <p>You have to add coworkers inorder to calculate the meeting costs.</p> <Link to="/add-coworker"><button className="mt-5 border bg-blue-500 text-white p-3"> Add Coworkers</button></Link> </>}
+      <div className="flex-col w-3/4">
+        <h1 className="text-3xl mb-5">Measure In Minutes</h1>
+        <div className="flex w-full mb-10">
+          <div className="w-1/3" >
+            <div className="flex flex-col w-full align-start">
+              <SectionHeader title="Select Coworker" />
+              <Select options={PEOPLE} onSelect={(e) => setPerson(e.target.value)} />
+              <button onClick={() => addCoworkerToMeeting()} className="w-1/2 border-2"> Add To Meeting</button>
+            </div>
+          </div>
+        </div>
         {coworkers.length !== 0 &&
           <>
             <div className="flex flex-col border rounded-lg px-auto items-center w-full px-52 py-10">

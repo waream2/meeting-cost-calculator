@@ -1,31 +1,16 @@
-export const PEOPLE =  [
+export const PEOPLE = [
   {
-    name: "Earn Where",
+    name: "Earn W",
     position: "Asshole",
     salary: "50000"
   },
   {
-    name: "Thomas Scott",
+    name: "Thomas S",
     position: "Writer",
     salary: "100000"
   },
   {
-    name: "Ace Callwood",
-    position: "Facilitator",
-    salary: "75000"
-  },
-  {
-    name: "Ace Callwooda",
-    position: "Facilitator",
-    salary: "75000"
-  },
-  {
-    name: "Ace Callwoods",
-    position: "Facilitator",
-    salary: "75000"
-  },
-  {
-    name: "Ace Callwoodd",
+    name: "Ace C",
     position: "Facilitator",
     salary: "75000"
   },

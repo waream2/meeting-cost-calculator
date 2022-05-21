@@ -8,10 +8,12 @@ const MeetingItem = ({ header, data }) => (
   </div>
 )
 
-const MeetingCard = () => (
-  <Card>
+// TODO: need to pass in meetings "data" as an array of objects and reference the data in the right place
+const MeetingCards = ({ data }) => (
+  <Card className="w-1/2 mr-5">
     <div className="flex flex-col py-5 px-3">
-      <MeetingItem header="Attendees" data={0} />
+      {/* TODO: couldnt figure out heigh parity between the two card sections so killing data lmao  */}
+      {/* <MeetingItem header="Attendees" data={0} /> */}
       <MeetingItem header="Time" data={0} />
       <MeetingItem header="Cost" data="$0.00" />
       <MeetingItem header="Date" data="$0.00" />
@@ -19,4 +21,4 @@ const MeetingCard = () => (
   </Card>
 )
 
-export default MeetingCard
+export default MeetingCards

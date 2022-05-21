@@ -8,6 +8,7 @@ import Header from './components/Header';
 import Layout from './components/Layout';
 import Home from './components/Home';
 import { Card } from 'react-rainbow-components';
+import { PEOPLE } from './people'
 
 
 function App() {
@@ -54,12 +55,12 @@ function App() {
       <Layout>
         <Header copy1="Add Coworkers" copy2="New Meeting Seconds" copy3="New Measure" path="/header" />
         <Router className="w-full flex justify-center" >
-          <Card className="flex p-20 mr-0 w-3/4" default >
-            <Home meetings={meetings} beenHere={seenBefore} path="/" />
-            <MeasureMeetingSecond addMeeting={setMeetings} meetings={meetings} coworkers={coworkers} path='/measure-seconds' />
-            <MeasureMeeting path='/measure-regular/' />
-            <AddCoworker setCoworker={setCoworkers} coworkers={coworkers} path='/add-coworker' />
-          </Card>
+          {/* <Card className="flex p-20 mr-0 w-3/4" default> */}
+          <Home meetings={meetings} beenHere={seenBefore} path="/" />
+          <MeasureMeetingSecond addMeeting={setMeetings} meetings={meetings} coworkers={PEOPLE} path='/measure-seconds' />
+          <MeasureMeeting path='/measure-regular/' />
+          <AddCoworker setCoworker={setCoworkers} coworkers={coworkers} path='/add-coworker' />
+          {/* </Card> */}
 
         </Router>
       </Layout>

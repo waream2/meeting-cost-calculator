@@ -77,8 +77,8 @@ const MeasureMeeting = () => {
 
 
   return (
-    <div className="">
-      <h1>Measure By The Second</h1>
+    <div className="flex--col w-3/4">
+      <h1 className="text-3xl mb-5">Measure By The Second</h1>
       <div className="flex flex-col items-center justify-center mb-10 w-full">
         <div className="flex flex-col border p-5 items-center w-full">
           <label for="person"> Select Coworker </label>

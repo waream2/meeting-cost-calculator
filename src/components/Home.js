@@ -5,7 +5,9 @@ import MeetingList from './MeetingList';
 import { Card } from 'react-rainbow-components';
 import SectionHeader from './SectionHeader.js'
 import DashboardCard from './DashboardCard';
-import MeetingCard from './MeetingCard';
+import MeetingCards from './MeetingCard';
+import CoworkerCard from './CoworkerCard';
+import { PEOPLE } from '../people';
 
 
 // left over from TS
@@ -34,9 +36,9 @@ const Home = (meetings) => {
   // threw this condition here just to render, come back to figure out how this needs to work.
   if (meetings) {
     return (
-      <div className="flex-col">
+      <div className="flex-col w-3/4">
         <h1 className="text-3xl mb-5 ">Welcome Back 👋🏾</h1>
-        <div className="flex">
+        <div className="flex w-full mb-10">
           <div className="w-1/3" >
             <div className="flex flex-col w-full">
               <SectionHeader title="Dashboard 📊 " />
@@ -45,8 +47,22 @@ const Home = (meetings) => {
           </div>
           <div className="w-2/3 ml-24">
             <SectionHeader title="Meetings 🤝" />
-            <MeetingCard />
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            <div className='flex first:mr-5'>
+              {/* TODO: create these dynamically from the last two meetings in array */}
+              <MeetingCards />
+              <MeetingCards />
+            </div>
+            <div className="flex justify-end mt-2">
+              <a>See all your meetings</a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <SectionHeader title="Coworkers" />
+          <div className="grid grid-cols-4 justify-items-stretch	">
+            {PEOPLE.map((person, i) => (
+              <CoworkerCard data={person} key={i} />
+            ))}
           </div>
         </div>
       </div >

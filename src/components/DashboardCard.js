@@ -10,7 +10,7 @@ const DashboardItem = ({ header, data }) => (
 
 const DashboardCard = () => (
   <Card>
-    <div className="flex flex-col py-5 px-3">
+    <div className="flex flex-col py-5 px-3 h-full">
       <DashboardItem header="Total Meetings" data={0} />
       <DashboardItem header="Time Spent" data={0} />
       <DashboardItem header="Total Cost" data="$0.00" />
