@@ -1,20 +1,23 @@
 import React, { useState } from 'react'
 import { Link } from '@reach/router';
 
-const MeasureMenu = ({ showingState, handleShow }) => (
-  <div className="mx-auto flex flex-col">
-    <button className="mr-5" onClick={() => handleShow(false)}>
-      <Link to="/measure-seconds" >
-        Measure Seconds
-      </Link>
-    </button>
-    <button className="mr-5" onClick={() => handleShow(false)} >
-      <Link to="/measure-regular">
-        Measure
-      </Link>
-    </button>
-  </div>
-);
+// NOTE: this was when there were two meetings types
+// but this is not being handled by the measure component
+
+// const MeasureMenu = ({ showingState, handleShow }) => (
+//   <div className="mx-auto flex flex-col">
+//     <button className="mr-5" onClick={() => handleShow(false)}>
+//       <Link to="/measure-seconds" >
+//         Measure Seconds
+//       </Link>
+//     </button>
+//     <button className="mr-5" onClick={() => handleShow(false)} >
+//       <Link to="/measure-regular">
+//         Measure
+//       </Link>
+//     </button>
+//   </div>
+// );
 
 const Header = () => {
 
@@ -43,12 +46,14 @@ const Header = () => {
             Add Coworker
           </Link>
         </button>
-        <div className='flex flex-col' onMouseEnter={handleMeetingHover} onMouseLeave={handleMeetingLeave}>
+        {/* <div className='flex flex-col' onMouseEnter={handleMeetingHover} onMouseLeave={handleMeetingLeave}> */}
           <button className="mr-5" >
+            <Link to="/measure-seconds">
             Add Meeting
+            </Link>
           </button>
-          {showMeetingMenu && <MeasureMenu showingState={showMeetingMenu} handleShow={setShowMeetingMenu} />}
-        </div>
+          {/* {showMeetingMenu && <MeasureMenu showingState={showMeetingMenu} handleShow={setShowMeetingMenu} />} */}
+        {/* </div> */}
 
       </div>
     </div>
